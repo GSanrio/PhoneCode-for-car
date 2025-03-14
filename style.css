@@ -1,0 +1,70 @@
+:root {
+  --animate-duration: 1.2s;
+  --animate-delay-step: 0.3s;
+}
+
+body {
+  min-height: 200vh;
+  background: #ffffff;
+  font-family: 'Microsoft YaHei', sans-serif;
+  overflow-x: hidden;
+}
+
+.text-block {
+  color: #333;
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  padding: 20px 40px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.text-block:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-1 { animation: float 3s ease-in-out infinite; }
+.animate-2 { animation: float 3s ease-in-out infinite 0.5s; }
+.animate-3 { animation: float 3s ease-in-out infinite 1s; }
+.animate-4 { animation: float 3s ease-in-out infinite 1.5s; }
+.animate-5 { animation: float 3s ease-in-out infinite 2s; }
+.animate-6 { animation: float 3s ease-in-out infinite 2.5s; }
+.animate-7 { animation: float 3s ease-in-out infinite 3s; }
+
+@media (max-width: 768px) {
+  .text-block {
+    font-size: 2.5rem;
+    padding: 15px 30px;
+  }
+}
+
+/* 添加复制反馈样式 */
+.text-block.copied {
+  background: rgba(144, 238, 144, 0.3);
+  box-shadow: 0 0 15px #98fb98;
+  animation: pulse 1s ease-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* 添加emoji字体支持 */
+.text-block {
+  font-family: 'Microsoft YaHei', 'Segoe UI Emoji', sans-serif;
+}
+
+.scroll-section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
